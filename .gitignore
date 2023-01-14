@@ -1,0 +1,50 @@
+# Build
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+__pycache__/
+.installed.cfg
+*.egg
+MANIFEST
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# JetBrains
+.idea/*
+!.idea/codeStyles/*
+!.idea/externalDependencies.xml
+*.eml
+*.iml
+*.iws
+*.ipr
+
+# Package Files
+*.ear
+*.war
+*.zip
+
+# OS Garbage
+desktop.ini
+Thumbs.db
+.DS_Store

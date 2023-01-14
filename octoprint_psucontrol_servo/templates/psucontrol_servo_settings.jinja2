@@ -1,0 +1,67 @@
+<!-- ko ifnot: settings.plugins.psucontrol -->
+<span class="help-inline label label-important">This plugin requires <a
+    href="https://plugins.octoprint.org/plugins/psucontrol/" target="_blank">PSU Control</a> in order to function. It can be installed from the Plugin Manager.</span>
+<!-- /ko -->
+
+<form class="form-horizontal">
+    <h4>General Settings</h4>
+    <div class="control-group">
+        <label class="control-label">GPIO Mode</label>
+        <div class="controls">
+            <select data-bind="value: settings.plugins.psucontrol_servo.GPIOMode">
+                <option value="BOARD">BOARD</option>
+                <option value="BCM">BCM</option>
+            </select>
+            <br /><span class="help-inline">Pin number will be converted if an alternate mode has already been set by another plugin.</span>
+        </div>
+    </div>
+    <br />
+
+    <h4>Servo Settings</h4>
+    <div class="control-group">
+        <label class="control-label">Pin | Frequency | Mode</label>
+        <div class="controls">
+            <input type="number" min="0" class="input-mini" data-bind="value: settings.plugins.psucontrol_servo.GPIOServoPin">
+            <input type="number" min="0" class="input-mini" data-bind="value: settings.plugins.psucontrol_servo.GPIOServoFreq">
+            <select data-bind="value: settings.plugins.psucontrol_servo.GPIOServoMode">
+                <option value="BUTTON">BUTTON</option>
+                <option value="SWITCH">SWITCH</option>
+            </select>
+            <br /><span class="help-inline">Pin: Servo GPIO Pin</span>
+            <br /><span class="help-inline">Frequency: Servo PWM Period</span>
+            <br /><span class="help-inline">Mode: Button (On - Idle - Off), Switch (On - Off)</span>
+        </div>
+        <br />
+
+        <label class="control-label">On | Off | Idle</label>
+        <div class="controls">
+            <input type="number" min="0" class="input-mini" data-bind="value: settings.plugins.psucontrol_servo.GPIOServoOn">
+            <input type="number" min="0" class="input-mini" data-bind="value: settings.plugins.psucontrol_servo.GPIOServoOff">
+            <input type="number" min="0" class="input-mini" data-bind="value: settings.plugins.psucontrol_servo.GPIOServoIdle">
+            <br /><span class="help-inline">SG90 Servo Example: (Angle / 18) + 2 = Duty Cycle (ms)</span>
+        </div>
+        <br />
+
+        <label class="control-label">Time (S)</label>
+        <div class="controls">
+            <input type="number" min="0" class="input-mini" data-bind="value: settings.plugins.psucontrol_servo.GPIOServoTime">
+            <br /><span class="help-inline">Servo Move Time</span>
+        </div>
+    </div>
+    <br />
+
+    <h4>Sense Settings</h4>
+    <div class="control-group">
+        <label class="control-label">Pin | Invert | Mode</label>
+        <div class="controls">
+            <input type="number" min="0" class="input-mini" data-bind="value: settings.plugins.psucontrol_servo.GPIOSensePin">
+            <input type="checkbox" data-bind="checked: settings.plugins.psucontrol_servo.GPIOSenseInvert">
+            <select data-bind="value: settings.plugins.psucontrol_servo.GPIOSensePinPull" class="input-medium">
+                <option value="">Float</option>
+                <option value="PULL_UP">Pull-Up</option>
+                <option value="PULL_DOWN">Pull-Down</option>
+            </select>
+            <br /><span class="help-inline"></span>
+        </div>
+    </div>
+</form>
